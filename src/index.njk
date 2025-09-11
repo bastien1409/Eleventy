@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apartments</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 2rem; }
+    h1 { margin-bottom: 1rem; }
+    ul { padding-left: 1.25rem; }
+    li { margin: 0.4rem 0; }
+    .name { font-weight: 600; }
+    .addr { color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Apartment List</h1>
+  <ul>
+    {% for u in units %}
+      <li>
+        <span class="name">{{ u.name }}</span>
+        <span class="addr"> — {{ u.address }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

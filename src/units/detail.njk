@@ -1,0 +1,23 @@
+---
+pagination:
+  data: units          # use the _data/units.json array
+  size: 1              # one unit per generated page
+  alias: unit
+permalink: "/units/{{ unit.title | slug }}/"  # e.g., /units/apartment-in-fontainebleau/
+eleventyComputed:
+  title: "{{ unit.title }}"
+---
+
+<h1>{{ unit.title }}</h1>
+<p><em>{{ unit.subtitle }}</em></p>
+<p><strong>Rent:</strong> {{ unit.rent }}</p>
+<p>{{ unit.about }}</p>
+<p>{{ unit.address }} — {{ unit.distance }} from campus</p>
+
+<!-- simple gallery -->
+<div class="gallery">
+  {% for img in unit.photos %}
+    <img src="{{ img }}" alt="{{ unit.title }} photo">
+  {% endfor %}
+</div>
+
